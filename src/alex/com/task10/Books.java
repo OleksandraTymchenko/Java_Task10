@@ -22,7 +22,7 @@ public class Books implements Serializable {
     }
 
     public static void comparePrices(Book[] books) {
-        Arrays.sort(books, new PriceCopmpare());
+        Arrays.sort(books, new PriceCompare());
     }
 
     public Book[] getBooks() {

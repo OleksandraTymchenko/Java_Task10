@@ -2,7 +2,7 @@ package alex.com.task10;
 
 import java.util.Comparator;
 
-public class PriceCopmpare implements Comparator {
+public class PriceCompare implements Comparator {
 
     @Override
     public int compare(Object o1, Object o2) {
