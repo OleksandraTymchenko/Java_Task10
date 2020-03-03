@@ -3,10 +3,8 @@ package alex.com.task10;
 import java.io.InvalidObjectException;
 import java.util.Scanner;
 
-import static alex.com.task10.Books.*;
-
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
         int i = 5;
         Book book1 = new Book(1, "The Old Man and the Sea", "Ernest Hemingway", "B & W Publishing", 1987, 324, 78);
         Book book2 = new Book(2, "A Walk in Amnesia", "O. Henry", "Ballantine Books", 2001, 90, 45);
@@ -56,10 +54,19 @@ public class Main {
         Books findBooksAfterYear = new Books(i);
         findBooksAfterYear.setBooks(books.searchBookYear(year));
 
-        Book[] booksToCompare = {book1, book2, book3, book4, book5};
-        compareAutorNames(booksToCompare);
-        comparePuplisherNames(booksToCompare);
-        comparePrices(booksToCompare);
+        System.out.println("---------AuthorNameCompare--------------");
+        books.compareAuthorNames(books.getBooks());
+        books.printBooks();
+
+        System.out.println("------PublisherNameCompare-------------------");
+        Books.comparePublisherNames(books.getBooks());
+        books.printBooks();
+
+        System.out.println("-------PriceCompare---------------");
+        Books.comparePrices(books.getBooks());
+        books.printBooks();
+
+        System.out.println("-------------------------------------");
         Serializator serializator = new Serializator();
         serializator.serialization(books);
         try {

@@ -13,28 +13,16 @@ public class Books implements Serializable {
         books = new Book[i];
     }
 
-    public static void compareAutorNames(Book[] books) {
-        System.out.println("---------AutourNameComporator--------------");
-        Arrays.sort(books, new AutourNameComporator());
-        for (Book elem : books) {
-            System.out.println(elem);
-        }
+    public void compareAuthorNames(Book[] books) {
+        Arrays.sort(books, new AuthorNameCompare());
     }
 
-    public static void comparePuplisherNames(Book[] books) {
-        System.out.println("------PuplisherNameComporator-------------------");
-        Arrays.sort(books, new PuplisherNameComporator());
-        for (Book elem : books) {
-            System.out.println(elem);
-        }
+    public static void comparePublisherNames(Book[] books) {
+        Arrays.sort(books, new PublisherNamesCompare());
     }
 
     public static void comparePrices(Book[] books) {
-        System.out.println("-------PriceCopmorator---------------");
-        Arrays.sort(books, new PriceCopmorator());
-        for (Book elem : books) {
-            System.out.println(elem);
-        }
+        Arrays.sort(books, new PriceCopmpare());
     }
 
     public Book[] getBooks() {
